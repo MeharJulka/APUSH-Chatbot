@@ -7,7 +7,8 @@ Original file is located at
     https://colab.research.google.com/drive/1qpSKzcB4gIuATX2JV_WGrVPG9XJ6Rhrq
 """
 
-!pip install  langchain_community  langchain_huggingface  huggingface_hub transformers colorama torch pdfminer.six chromadb langchain_openai langchain-google-genai
+#!pip install  langchain_community  langchain_huggingface  huggingface_hub transformers colorama torch pdfminer.six chromadb langchain_openai langchain-google-genai
+!pip install langchain langchain_core langchain_community langchain_huggingface huggingface_hub transformers colorama torch pdfminer.six chromadb langchain_openai langchain-google-genai tiktoken
 
 import os
 import click
@@ -313,7 +314,7 @@ class SLAiAssist:
                         Question: {question}
 
                         If answer not found in the context, only say "I don't know" and never provide explanation even though you know the explanation for the given out of context question.
-                        Answer:'''
+                        Answer:'I don't know.'
         self.PROMPT = PromptTemplate(
             template=self.template, input_variables=["context", "question"]
         )
